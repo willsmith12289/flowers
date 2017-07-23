@@ -11,13 +11,23 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
+  <strong>Image:</strong>
+  <%= image_tag @product.image.url(:thumb) %>
 </p>
 
 <p>
   <strong>Price:</strong>
   <%= @product.price %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @product.unit %>
+</p>
+
+<p>
+  <strong>Availability:</strong>
+  <%= @product.available %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

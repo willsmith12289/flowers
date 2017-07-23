@@ -21,12 +21,22 @@
     <%= f.text_area :description, rows: 6 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
     <%= f.label :price %><br>
     <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :unit %><br>
+    <%= f.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= f.radio_button :available, true %>
+    <%= f.label :available, "available" %><br>
+    <%= f.radio_button :available, false %>
+    <%= f.label :available, "not_available" %><br>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -11,6 +11,6 @@ class StoreController < ApplicationController
   before_action :set_cart
   #before_action :authenticate_user!
   def index
-    @products = Product.order(:title)
+    @products = Product.where(available: true).order(:title)
   end
 end

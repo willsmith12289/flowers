@@ -5,7 +5,7 @@
   <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
 
     <td>
-      <%= image_tag(product.image_url, class: 'list_image') %>
+      <%= image_tag(product.image.url(:thumb)) %>
     </td>
 
     <td class="list_description">
@@ -15,7 +15,20 @@
                length: 80) %></dd>
       </dl>
     </td>
+    <td>
+     Unit: <%= product.unit %>
+    </td>
 
+    <td>
+     Availability: <%= product.available %>
+    </td>
+<!--     <td>
+      <%= form_for product do |f| %>
+        <%=f.label 'Available' %>
+        <%= f.radio_button(:available, true, onClick: "this.form.submit;") %>
+      <% end %>
+      
+    </td> -->
     <td class="list_actions">
       <%= link_to 'Show', product %><br/>
       <%= link_to 'Edit', edit_product_path(product) %><br/>
