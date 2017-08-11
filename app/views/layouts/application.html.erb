@@ -24,7 +24,12 @@
       <% else %>
         <%= link_to "Login", new_user_session_path %>
       <% end %>
+      <br>
+      <% if current_user.try(:admin?) %>
+        <%= link_to "Add Product", new_product_path %>
+      <% end %>
     </div>
+
     <div id="main">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
