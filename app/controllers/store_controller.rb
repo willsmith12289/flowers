@@ -11,6 +11,11 @@ class StoreController < ApplicationController
   before_action :set_cart
   #before_action :authenticate_user!
   def index
-    @products = Product.where(available: true).order(:title)
+    @search = Product.search do
+      with(:available, true)
+      fulltext params[:search]
+    end
+      @products = @search.results
+    #@products = Product.where(available: true).order(:title)
   end
 end

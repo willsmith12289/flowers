@@ -7,6 +7,11 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class Product < ActiveRecord::Base
+  searchable do
+    text :title, :default_boost => 2
+    text :description
+    boolean :available
+  end
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   has_many :line_items
   has_many :orders, through: :line_items
