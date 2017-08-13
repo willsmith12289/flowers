@@ -15,20 +15,20 @@
  *= require_tree .
  *= require_self
  */
+@import 'variables';
 
 #banner {
-  background: #9c9;
+  background: $banner_bg;
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: $banner_txt;
   text-align: center;
 
   img {
     float: left;
   }
 }
-
 #notice {
   color: #000 !important;
   border: 2px solid red;
@@ -37,42 +37,44 @@
   background-color: #f0f0f0;
   font: bold smaller sans-serif;
 }
-
 #columns {
-  background: #141;
+  background: $side_bg;
 
   #main {
-    margin-left: 17em;
+    margin-left: 24em;
     padding: 1em;
     background: white;
   }
-
-//
+  //
   #side {
     float: left;
     padding: 1em 2em;
-    width: 13em;
-    background: #141;
+    width: 20em;
+    background: $side_bg;
 
     form, div {
       display: inline;
-    }  
- 
+    }
     input {
       font-size: small;
     }
-
     #cart {
       font-size: smaller;
-      color:     white;
+      color: white;
 
       table {
-        border-top:    1px dotted #595;
-        border-bottom: 1px dotted #595;
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 1px dotted $cart;
+        border-bottom: 1px dotted $cart;
+        //padding-bottom: 10px;
         margin-bottom: 10px;
+
+        th {
+          border-bottom: 1px solid $cart;
+        }
       }
     }
-
     ul {
       padding: 0;
 
@@ -86,9 +88,8 @@
       }
     }
   }
-//
+  //
 }
-
 //
 .depot_form {
   fieldset {
@@ -96,12 +97,11 @@
 
     legend {
       color: #dfd;
-      background: #141;
+      background: $side_bg;
       font-family: sans-serif;
       padding: 0.2em 1em;
     }
   }
-
   form {
     label {
       width: 5em;
@@ -111,15 +111,12 @@
       margin-right: 0.1em;
       display: block;
     }
-
     select, textarea, input {
       margin-left: 0.5em;
     }
-
     .submit {
       margin-left: 4em;
     }
-
     br {
       display: none
     }

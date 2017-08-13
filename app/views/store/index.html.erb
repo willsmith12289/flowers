@@ -9,7 +9,7 @@
     <%= submit_tag "Search", :name => nil %>
   </div>
 <% end -%>
-
+<% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
       <div class="entry">
@@ -32,3 +32,4 @@
       </div>
     <% end %>
   <% end %>
+<% end %>

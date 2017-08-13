@@ -1,14 +1,36 @@
-// Place all the styles related to the Carts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'variables';
 
 .carts, #side #cart {
-  .item_price, .total_line {
-    text-align: right;
-  }
-
-  .total_line .total_cell {
-    font-weight: bold;
-    border-top: 1px solid #595;
-  }
+	.quantity_cell, .item_price {
+		padding-left: 1em;
+	}
+	.total_line {
+		text-align: right;
+	}
+	.total_line .total_cell {
+		font-weight: bold;
+		position: relative;
+		border: 1px solid $side_bg;
+	}
+	.total_line .total_cell:after {
+		//margin-top: .4em;
+		content: '';
+		display: block;
+		position: absolute;
+		min-width: 60px;
+		max-width: 80px;
+		top: -5px;
+		left: 15px;
+		right: 30px;
+		border: 1px solid $cart;
+	}
+	.item_remove a {
+		float: right;
+		text-decoration: none;
+		// padding-left: .5em;
+		// padding-right: .5em;
+		// border: 1 px solid black;
+		// background: white;
+		// border-radius: 5px;
+	}
 }

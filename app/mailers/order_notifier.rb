@@ -1,4 +1,3 @@
-
 class OrderNotifier < ActionMailer::Base
   default from: 'Flower Smith <willsmith12289@gmail.com>'
   def received(order)

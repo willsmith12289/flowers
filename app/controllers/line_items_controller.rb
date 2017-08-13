@@ -1,11 +1,3 @@
-#---
-# Excerpted from "Agile Web Development with Rails",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material,
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose.
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
 class LineItemsController < ApplicationController
   include CurrentCart
   before_action :authenticate_user!, only: [:create]
@@ -72,7 +64,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to store_index_url, notice: 'Line item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
